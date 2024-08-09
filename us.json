@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "linkedin",
+        "pandora",
+        "licdn.com",
+        "linkedin.com",
+        "pandora.com",
+        "p-cdn.us",
+        "rdio.com",
+        "dzcdn.net",
+        "joox.com",
+        "pscdn.co",
+      ]
+    }
+  ]
+}
