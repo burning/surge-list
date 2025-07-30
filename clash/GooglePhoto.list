@@ -1,2 +1,5 @@
 DOMAIN-SUFFIX,photos.googleapis.com
 DOMAIN,photos.googleapis.com
+DOMAIN-SUFFIX,photodata-pa.googleapis.com
+DOMAIN,photodata-pa.googleapis.com
+DOMAIN-SUFFIX,googleapis.com
