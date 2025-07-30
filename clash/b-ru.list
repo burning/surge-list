@@ -1,0 +1,39 @@
+# DIY
+DOMAIN,facebook.com
+DOMAIN,instagram.com
+
+# twitter
+DOMAIN-SUFFIX,cms-twdigitalassets.com
+DOMAIN-SUFFIX,periscopeDOMAIN-SUFFIX,tv
+DOMAIN-SUFFIX,pscpDOMAIN-SUFFIX,tv
+DOMAIN-SUFFIX,t.co
+DOMAIN-SUFFIX,tellapart.com
+DOMAIN-SUFFIX,tweetdeck.com
+DOMAIN-SUFFIX,twitter.biz
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,twitter.jp
+DOMAIN-SUFFIX,twittercommunity.com
+DOMAIN-SUFFIX,twitterflightschool.com
+DOMAIN-SUFFIX,twitterinc.com
+DOMAIN-SUFFIX,twitteroauth.com
+DOMAIN-SUFFIX,twitterstat.us
+DOMAIN-SUFFIX,twtrdns.net
+DOMAIN-SUFFIX,twttr.com
+DOMAIN-SUFFIX,twttr.net
+DOMAIN-SUFFIX,twvid.com
+DOMAIN-SUFFIX,vine.co
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,instagram.com
+
+
+
+# DeepL直连翻译
+#DOMAIN,www2.deepl.com
+
+# DOMAIN,anydesk.com
+
+# TAG
+# DOMAIN-KEYWORD,tagss
+
+
