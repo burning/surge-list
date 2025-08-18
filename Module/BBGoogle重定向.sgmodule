@@ -1,9 +1,9 @@
-#!name=Google搜索重定向
+#!name=Google搜索重定向-BB
 #!desc=将Google搜索重定向至.com域名，如遇频繁跳转请禁用本插件。
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Google.png
-#!category=iKeLee
-#!tag=去广告
+#!category=BB
+#!tag=BB
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
 #!date=2025-05-13 15:17:08
