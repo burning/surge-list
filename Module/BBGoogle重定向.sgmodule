@@ -15,4 +15,5 @@
 
 [MITM]
 hostname = %APPEND% www.google.cn
+hostname = %APPEND% www.google.com.hk
 
