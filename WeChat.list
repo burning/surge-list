@@ -1,0 +1,5 @@
+DOMAIN-SUFFIX,open.work.weixin.qq.com,💬WeChat,extended-matching
+IP-CIDR,43.160.0.0/16,💬WeChat,no-resolve
+PROCESS-NAME,/Applications/企业微信.app/Contents/MacOS/企业微信,💬WeChat
+PROCESS-NAME,WeChat*,💬WeChat
+USER-AGENT,*WXWork*,💬WeChat
