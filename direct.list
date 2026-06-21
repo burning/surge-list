@@ -1,0 +1,65 @@
+DOMAIN-SUFFIX,99998888.cc
+DOMAIN-SUFFIX,ip.sb
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,iemby.cn
+DOMAIN-SUFFIX,qlogo.cn
+DOMAIN-SUFFIX,qpic.cn
+DOMAIN-SUFFIX,yoozb.live
+DOMAIN-SUFFIX,laobaitv.net
+DOMAIN-SUFFIX,sportsteam368.com
+DOMAIN-SUFFIX,benmutang.com
+DOMAIN-SUFFIX,hohai.eu.org
+DOMAIN-SUFFIX,pan.8897122.xyz
+DOMAIN-SUFFIX,binance.com
+DOMAIN-SUFFIX,grandinternationalschool.com
+DOMAIN-SUFFIX,modujx11.com
+DOMAIN-SUFFIX,mobaibox.com
+DOMAIN-SUFFIX,resilio.com
+DOMAIN-SUFFIX,snipaste.com
+DOMAIN-SUFFIX,0v0.ai
+DOMAIN-SUFFIX,outong-valve.com
+DOMAIN-SUFFIX,makifx.com
+DOMAIN-SUFFIX,tailscale.com
+DOMAIN-SUFFIX,teracloud.jp
+DOMAIN-SUFFIX,liunx.do
+DOMAIN-SUFFIX,iptv.cc
+DOMAIN-SUFFIX,wolongzyw.com
+DOMAIN-SUFFIX,wlcdn99.com
+DOMAIN-SUFFIX,linux.do
+DOMAIN-SUFFIX,tdck.fun
+DOMAIN-SUFFIX,migucloud.com
+DOMAIN-SUFFIX,migucloud.com
+DOMAIN-SUFFIX,pages.dev,extended-matching
+DOMAIN-SUFFIX,ctyunxs.cn,extended-matching
+DOMAIN-SUFFIX,catvod.com,extended-matching
+DOMAIN,garyshare.sharewithyou.dpdns.org
+IP-CIDR,108.162.198.185/32,no-resolve
+IP-CIDR,104.16.174.226/32,no-resolve
+IP-CIDR,38.207.137.103/24,no-resolve
+IP-CIDR,172.67.183.124/32,no-resolve
+IP-CIDR,103.139.238.161/32,no-resolve
+IP-CIDR,156.238.248.80/32,no-resolve
+IP-CIDR,172.67.189.27/32,no-resolve
+PROCESS-NAME,com.metacubex.ClashX.ProxyConfigHelper.meta
+PROCESS-NAME,Core
+PROCESS-NAME,Throne
+PROCESS-NAME,nekobox
+PROCESS-NAME,nekoray
+PROCESS-NAME,nekoray_core
+PROCESS-NAME,/Applications/nekoray_arm64-xn67k.app/Contents/MacOS/nekobox_core
+PROCESS-NAME,"/Users/burning/Library/Application Support/v2rayN/bin/xray/xray"
+PROCESS-NAME,"/Users/burning/Library/Application Support/v2rayN/bin/sing_box/sing-box"
+PROCESS-NAME,Hiddify
+PROCESS-NAME,"Mihomo Party"
+PROCESS-NAME,mihomo
+PROCESS-NAME,FlClashCore
+PROCESS-NAME,clash-verge
+PROCESS-NAME,mihomo-alpha
+PROCESS-NAME,FlClash
+PROCESS-NAME,verge-mihomo
+PROCESS-NAME,Karing
+PROCESS-NAME,Shadowrocket
+PROCESS-NAME,"Plex Script Host"
+PROCESS-NAME,"Plex Media Server"
+PROCESS-NAME,nekobox_core
+PROCESS-NAME,"/Applications/Cloudflare WARP.app/Contents/Resources/CloudflareWARP"
