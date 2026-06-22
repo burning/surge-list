@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "googleusercontent.com"
+      ],
+      "domain_suffix": [
+        "googleusercontent.com"
+      ],
+      "user_agent": [
+        "*YouTubeMusic*",
+        "*com.google.ios.youtubemusic*",
+        "YouTubeMusic*",
+        "com.google.ios.youtubemusic*"
+      ]
+    }
+  ]
+}
