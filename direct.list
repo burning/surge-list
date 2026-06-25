@@ -8,7 +8,6 @@ DOMAIN-SUFFIX,yoozb.live
 DOMAIN-SUFFIX,laobaitv.net
 DOMAIN-SUFFIX,sportsteam368.com
 DOMAIN-SUFFIX,benmutang.com
-DOMAIN-SUFFIX,hohai.eu.org
 DOMAIN-SUFFIX,pan.8897122.xyz
 DOMAIN-SUFFIX,binance.com
 DOMAIN-SUFFIX,grandinternationalschool.com
@@ -32,14 +31,6 @@ DOMAIN-SUFFIX,migucloud.com
 DOMAIN-SUFFIX,pages.dev,extended-matching
 DOMAIN-SUFFIX,ctyunxs.cn,extended-matching
 DOMAIN-SUFFIX,catvod.com,extended-matching
-DOMAIN,garyshare.sharewithyou.dpdns.org
-IP-CIDR,108.162.198.185/32,no-resolve
-IP-CIDR,104.16.174.226/32,no-resolve
-IP-CIDR,38.207.137.103/24,no-resolve
-IP-CIDR,172.67.183.124/32,no-resolve
-IP-CIDR,103.139.238.161/32,no-resolve
-IP-CIDR,156.238.248.80/32,no-resolve
-IP-CIDR,172.67.189.27/32,no-resolve
 PROCESS-NAME,com.metacubex.ClashX.ProxyConfigHelper.meta
 PROCESS-NAME,Core
 PROCESS-NAME,Throne
