@@ -1,0 +1,16 @@
+#!name=X / Twitter AdBlock & QUIC Filter
+#!desc=阻断 X (Twitter) 的 QUIC (HTTP/3) 流量以强制回退至 TCP，并配置 MITM 解密与去广告脚本重写。
+#!category=Tweaks
+
+[Rule]
+# 拦截 X 相关的 UDP 443 流量，强制客户端回退到 TCP 从而触发 MITM
+AND,((DOMAIN-SUFFIX,twitter.com),(DEST-PORT,443),(PROTOCOL,UDP)),REJECT
+AND,((DOMAIN-SUFFIX,x.com),(DEST-PORT,443),(PROTOCOL,UDP)),REJECT
+AND,((DOMAIN-SUFFIX,twimg.com),(DEST-PORT,443),(PROTOCOL,UDP)),REJECT
+
+[Script]
+# X 信息流广告净化脚本（采用社区主流维护的高兼容版本）
+X_AdBlock = type=http-response,pattern=^https?:\/\/api\.(twitter|x)\.com\/(1\.1|2|graphql|i\/api)\/,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/twitter.adblock.response.js
+
+[MITM]
+hostname = %APPEND% api.twitter.com, api.x.com, *.twitter.com, *.x.com
