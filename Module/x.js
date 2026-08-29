@@ -1,5 +1,5 @@
 /**
- * X (Twitter) 去广告与时间线推荐过滤脚本
+ * X (Twitter) PWA & Web & App 通用去广告脚本
  */
 const url = $request.url;
 let body = $response.body;
@@ -8,54 +8,80 @@ if (body) {
   try {
     let obj = JSON.parse(body);
 
-    // 过滤 GraphQL / Timeline 响应中的广告推文
-    const filterInstructions = (instructions) => {
-      if (!Array.isArray(instructions)) return;
-      instructions.forEach((instruction) => {
-        // 1. 处理 AddEntries 类型的流
-        if (instruction.type === "TimelineAddEntries" && Array.isArray(instruction.entries)) {
-          instruction.entries = instruction.entries.filter((entry) => {
-            const entryId = entry.entryId || "";
-            // 过滤广告推文条目、推荐关注、轮播横幅等
-            if (
-              entryId.includes("promoted") ||
-              entryId.includes("promoted-tweet") ||
-              entryId.includes("who-to-follow") ||
-              entryId.includes("WhoToFollow") ||
-              entryId.includes("trend")
-            ) {
-              return false;
-            }
-            // 检查内容内部是否带有推广元数据
-            const itemContent = entry.content?.itemContent;
-            if (itemContent?.promotedMetadata || itemContent?.promotedContent) {
-              return false;
-            }
-            return true;
-          });
-        }
-        // 2. 处理 PinEntry 类型
-        if (instruction.type === "TimelinePinEntry") {
-          const itemContent = instruction.entry?.content?.itemContent;
-          if (itemContent?.promotedMetadata || itemContent?.promotedContent) {
-            delete instruction.entry;
-          }
-        }
-      });
+    const isPromoted = (entry) => {
+      if (!entry) return false;
+      const entryId = entry.entryId || "";
+      // 常见广告 / 推广关键词过滤
+      if (
+        entryId.includes("promoted") ||
+        entryId.includes("promoted-tweet") ||
+        entryId.includes("who-to-follow") ||
+        entryId.includes("WhoToFollow") ||
+        entryId.includes("trend") ||
+        entryId.includes("Topics") ||
+        entryId.includes("topics")
+      ) {
+        return true;
+      }
+
+      // 提取核心推文元数据
+      const itemContent = entry.content?.itemContent;
+      const tweetResult =
+        itemContent?.tweet_results?.result ||
+        itemContent?.tweetDisplayType;
+
+      if (
+        itemContent?.promotedMetadata ||
+        itemContent?.promotedContent ||
+        tweetResult?.promotedMetadata ||
+        tweetResult?.tweet?.promotedMetadata
+      ) {
+        return true;
+      }
+      return false;
     };
 
-    // 匹配常规 GraphQL 返回结构
-    if (obj.data?.home?.home_timeline_urt?.instructions) {
-      filterInstructions(obj.data.home.home_timeline_urt.instructions);
-    } else if (obj.data?.user?.result?.timeline_v2?.timeline?.instructions) {
-      filterInstructions(obj.data.user.result.timeline_v2.timeline.instructions);
-    } else if (obj.data?.threaded_conversation_with_injections_v2?.instructions) {
-      filterInstructions(obj.data.threaded_conversation_with_injections_v2.instructions);
+    const cleanInstructions = (instructions) => {
+      if (!Array.isArray(instructions)) return;
+      for (let i = instructions.length - 1; i >= 0; i--) {
+        const inst = instructions[i];
+        
+        // 1. 处理主信息流 entries
+        if (inst.type === "TimelineAddEntries" && Array.isArray(inst.entries)) {
+          inst.entries = inst.entries.filter((entry) => !isPromoted(entry));
+        }
+        
+        // 2. 处理 Pin 置顶与单个注入
+        if (inst.type === "TimelinePinEntry") {
+          if (isPromoted(inst.entry)) {
+            instructions.splice(i, 1);
+          }
+        }
+      }
+    };
+
+    // 网页端 / PWA 主时间线、关注流与搜索流路径
+    if (obj.data) {
+      if (obj.data.home?.home_timeline_urt?.instructions) {
+        cleanInstructions(obj.data.home.home_timeline_urt.instructions);
+      }
+      if (obj.data.user?.result?.timeline_v2?.timeline?.instructions) {
+        cleanInstructions(obj.data.user.result.timeline_v2.timeline.instructions);
+      }
+      if (obj.data.bookmark_timeline_v2?.timeline?.instructions) {
+        cleanInstructions(obj.data.bookmark_timeline_v2.timeline.instructions);
+      }
+      if (obj.data.search_by_raw_query?.search_timeline?.timeline?.instructions) {
+        cleanInstructions(obj.data.search_by_raw_query.search_timeline.timeline.instructions);
+      }
+      if (obj.data.threaded_conversation_with_injections_v2?.instructions) {
+        cleanInstructions(obj.data.threaded_conversation_with_injections_v2.instructions);
+      }
     }
 
     body = JSON.stringify(obj);
   } catch (e) {
-    // 解析失败直接放行，避免破坏客户端请求
+    // 忽略非标准 JSON，原样放行
   }
 }
 
