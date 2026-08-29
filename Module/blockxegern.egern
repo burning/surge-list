@@ -1,6 +1,3 @@
-name: X / Twitter PWA & Web AdBlock
-description: 针对 X / Twitter 网页版与 PWA 的广告与推广推文净化模块
-
 rules:
   - AND:
       - DOMAIN-SUFFIX,twitter.com
