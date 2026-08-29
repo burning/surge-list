@@ -1,0 +1,8 @@
+#!name=X PWA AdBlock
+#!desc=X / Twitter PWA 与 Web 广告净化
+
+[Script]
+X_AdBlock = type=http-response,pattern=^https?:\/\/(api\.)?(twitter|x)\.com\/(1\.1|2|graphql|i\/api)\/,requires-body=1,max-size=5242880,script-path=https://raw.githubusercontent.com/burning/surge-list/refs/heads/master/Module/x.js
+
+[MITM]
+hostname = %APPEND% x.com, twitter.com, api.x.com, api.twitter.com
