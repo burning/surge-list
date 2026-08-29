@@ -1,0 +1,29 @@
+name: X / Twitter PWA & Web AdBlock
+description: 针对 X / Twitter 网页版与 PWA 的广告与推广推文净化模块
+
+rules:
+  - AND:
+      - DOMAIN-SUFFIX,twitter.com
+      - PORT,443
+      - PROTOCOL,UDP
+    MATCH: REJECT
+  - AND:
+      - DOMAIN-SUFFIX,x.com
+      - PORT,443
+      - PROTOCOL,UDP
+    MATCH: REJECT
+
+scriptings:
+  - http_response:
+      name: X_AdBlock
+      match: ^https?:\/\/(api\.)?(twitter|x)\.com\/(1\.1|2|graphql|i\/api)\/
+      script_url: x_adblock.js
+      body_required: true
+      max_size: 5242880
+
+mitm:
+  hostnames:
+    - x.com
+    - twitter.com
+    - api.x.com
+    - api.twitter.com
