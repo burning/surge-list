@@ -1,22 +1,18 @@
+name: X / Twitter PWA & Web AdBlock
+description: 阻断 QUIC 流量并净化 X / Twitter 网页与 PWA 广告
+
 rules:
-  - AND:
-      - DOMAIN-SUFFIX,twitter.com
-      - PORT,443
-      - PROTOCOL,UDP
-    MATCH: REJECT
-  - AND:
-      - DOMAIN-SUFFIX,x.com
-      - PORT,443
-      - PROTOCOL,UDP
-    MATCH: REJECT
+  - DOMAIN-SUFFIX,twitter.com,REJECT,extended-matching
+  - DOMAIN-SUFFIX,x.com,REJECT,extended-matching
+  - DOMAIN-SUFFIX,twimg.com,REJECT,extended-matching
 
 scriptings:
-  - http_response:
-      name: X_AdBlock
-      match: ^https?:\/\/(api\.)?(twitter|x)\.com\/(1\.1|2|graphql|i\/api)\/
-      script_url: x_adblock.js
-      body_required: true
-      max_size: 5242880
+  - name: X_AdBlock
+    match: ^https?:\/\/(api\.)?(twitter|x)\.com\/(1\.1|2|graphql|i\/api)\/
+    type: response
+    script_url: x_adblock.js
+    body_required: true
+    max_size: 5242880
 
 mitm:
   hostnames:
